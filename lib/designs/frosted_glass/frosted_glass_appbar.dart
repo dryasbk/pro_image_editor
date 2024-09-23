@@ -166,22 +166,23 @@ class _FrostedGlassActionBarState extends State<FrostedGlassActionBar> {
                           icon: Icon(widget.editor.configs.icons
                               .cropRotateEditor.bottomNavBar),
                         ),
-                      if (widget.editor.configs.filterEditorConfigs.enabled)
-                        IconButton(
-                          tooltip: widget.editor.configs.i18n.filterEditor
-                              .bottomNavigationBarText,
-                          onPressed: widget.editor.openFilterEditor,
-                          icon: Icon(widget
-                              .editor.configs.icons.filterEditor.bottomNavBar),
-                        ),
-                      if (widget.editor.configs.blurEditorConfigs.enabled)
-                        IconButton(
-                          tooltip: widget.editor.configs.i18n.blurEditor
-                              .bottomNavigationBarText,
-                          onPressed: widget.editor.openBlurEditor,
-                          icon: Icon(widget
-                              .editor.configs.icons.blurEditor.bottomNavBar),
-                        ),
+                      // if (widget.editor.configs.filterEditorConfigs.enabled)
+                      //   IconButton(
+                      //     tooltip: widget.editor.configs.i18n.filterEditor
+                      //         .bottomNavigationBarText,
+                      //     onPressed: widget.editor.openFilterEditor,
+                      //     icon: Icon(widget
+                      //         .editor.configs.icons.filterEditor.bottomNavBar),
+                      //   ),
+                      // if (widget.editor.configs.blurEditorConfigs.enabled)
+                      //   IconButton(
+                      //     tooltip: widget.editor.configs.i18n.blurEditor
+                      //         .bottomNavigationBarText,
+                      //     onPressed: widget.editor.openBlurEditor,
+                      //     icon: Icon(widget
+                      //         .editor.configs.icons.blurEditor.bottomNavBar),
+                      //   ),
+
                       if (widget.editor.configs.stickerEditorConfigs?.enabled ==
                               true ||
                           widget.editor.configs.emojiEditorConfigs.enabled)

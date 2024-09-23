@@ -1030,10 +1030,10 @@ class ProImageEditorState extends State<ProImageEditor>
       editorName = SubEditor.text;
     } else if (T is CropRotateEditor) {
       editorName = SubEditor.cropRotate;
-    } else if (T is FilterEditor) {
-      editorName = SubEditor.filter;
-    } else if (T is BlurEditor) {
-      editorName = SubEditor.blur;
+      // } else if (T is FilterEditor) {
+      //   editorName = SubEditor.filter;
+      // } else if (T is BlurEditor) {
+      //   editorName = SubEditor.blur;
     } else if (T is EmojiEditor) {
       editorName = SubEditor.emoji;
     }
@@ -1266,76 +1266,76 @@ class ProImageEditorState extends State<ProImageEditor>
   /// is received as a
   /// `Uint8List`. If no filter is applied or the operation is canceled, the
   /// original image is retained.
-  void openFilterEditor() async {
-    if (!mounted) return;
-    FilterMatrix? filters = await openPage(
-      FilterEditor.autoSource(
-        key: filterEditor,
-        file: editorImage.file,
-        byteArray: editorImage.byteArray,
-        assetPath: editorImage.assetPath,
-        networkUrl: editorImage.networkUrl,
-        initConfigs: FilterEditorInitConfigs(
-          theme: _theme,
-          configs: configs,
-          callbacks: callbacks,
-          transformConfigs: stateManager.transformConfigs,
-          layers: activeLayers,
-          mainImageSize: sizesManager.decodedImageSize,
-          mainBodySize: sizesManager.bodySize,
-          convertToUint8List: false,
-          appliedBlurFactor: stateManager.activeBlur,
-          appliedFilters: stateManager.activeFilters,
-        ),
-      ),
-    );
+  // void openFilterEditor() async {
+  //   if (!mounted) return;
+  //   FilterMatrix? filters = await openPage(
+  //     FilterEditor.autoSource(
+  //       key: filterEditor,
+  //       file: editorImage.file,
+  //       byteArray: editorImage.byteArray,
+  //       assetPath: editorImage.assetPath,
+  //       networkUrl: editorImage.networkUrl,
+  //       initConfigs: FilterEditorInitConfigs(
+  //         theme: _theme,
+  //         configs: configs,
+  //         callbacks: callbacks,
+  //         transformConfigs: stateManager.transformConfigs,
+  //         layers: activeLayers,
+  //         mainImageSize: sizesManager.decodedImageSize,
+  //         mainBodySize: sizesManager.bodySize,
+  //         convertToUint8List: false,
+  //         appliedBlurFactor: stateManager.activeBlur,
+  //         appliedFilters: stateManager.activeFilters,
+  //       ),
+  //     ),
+  //   );
 
-    if (filters == null) return;
+  //   if (filters == null) return;
 
-    addHistory(
-      filters: filters,
-      heroScreenshotRequired: true,
-    );
+  //   addHistory(
+  //     filters: filters,
+  //     heroScreenshotRequired: true,
+  //   );
 
-    setState(() {});
-    mainEditorCallbacks?.handleUpdateUI();
-  }
+  //   setState(() {});
+  //   mainEditorCallbacks?.handleUpdateUI();
+  // }
 
-  /// Opens the blur editor as a modal bottom sheet.
-  void openBlurEditor() async {
-    if (!mounted) return;
-    double? blur = await openPage(
-      BlurEditor.autoSource(
-        key: blurEditor,
-        file: editorImage.file,
-        byteArray: editorImage.byteArray,
-        assetPath: editorImage.assetPath,
-        networkUrl: editorImage.networkUrl,
-        initConfigs: BlurEditorInitConfigs(
-          theme: _theme,
-          mainImageSize: sizesManager.decodedImageSize,
-          mainBodySize: sizesManager.bodySize,
-          layers: activeLayers,
-          configs: configs,
-          callbacks: callbacks,
-          transformConfigs: stateManager.transformConfigs,
-          convertToUint8List: false,
-          appliedBlurFactor: stateManager.activeBlur,
-          appliedFilters: stateManager.activeFilters,
-        ),
-      ),
-    );
+  // /// Opens the blur editor as a modal bottom sheet.
+  // void openBlurEditor() async {
+  //   if (!mounted) return;
+  //   double? blur = await openPage(
+  //     BlurEditor.autoSource(
+  //       key: blurEditor,
+  //       file: editorImage.file,
+  //       byteArray: editorImage.byteArray,
+  //       assetPath: editorImage.assetPath,
+  //       networkUrl: editorImage.networkUrl,
+  //       initConfigs: BlurEditorInitConfigs(
+  //         theme: _theme,
+  //         mainImageSize: sizesManager.decodedImageSize,
+  //         mainBodySize: sizesManager.bodySize,
+  //         layers: activeLayers,
+  //         configs: configs,
+  //         callbacks: callbacks,
+  //         transformConfigs: stateManager.transformConfigs,
+  //         convertToUint8List: false,
+  //         appliedBlurFactor: stateManager.activeBlur,
+  //         appliedFilters: stateManager.activeFilters,
+  //       ),
+  //     ),
+  //   );
 
-    if (blur == null) return;
+  //   if (blur == null) return;
 
-    addHistory(
-      blur: blur,
-      heroScreenshotRequired: true,
-    );
+  //   addHistory(
+  //     blur: blur,
+  //     heroScreenshotRequired: true,
+  //   );
 
-    setState(() {});
-    mainEditorCallbacks?.handleUpdateUI();
-  }
+  //   setState(() {});
+  //   mainEditorCallbacks?.handleUpdateUI();
+  // }
 
   /// Opens the emoji editor.
   ///
@@ -2202,34 +2202,35 @@ class ProImageEditorState extends State<ProImageEditor>
                                     ),
                                     onPressed: openCropRotateEditor,
                                   ),
-                                if (filterEditorConfigs.enabled)
-                                  FlatIconTextButton(
-                                    key: const ValueKey(
-                                        'open-filter-editor-btn'),
-                                    label: Text(
-                                        i18n.filterEditor
-                                            .bottomNavigationBarText,
-                                        style: bottomTextStyle),
-                                    icon: Icon(
-                                      icons.filterEditor.bottomNavBar,
-                                      size: bottomIconSize,
-                                      color: Colors.white,
-                                    ),
-                                    onPressed: openFilterEditor,
-                                  ),
-                                if (blurEditorConfigs.enabled)
-                                  FlatIconTextButton(
-                                    key: const ValueKey('open-blur-editor-btn'),
-                                    label: Text(
-                                        i18n.blurEditor.bottomNavigationBarText,
-                                        style: bottomTextStyle),
-                                    icon: Icon(
-                                      icons.blurEditor.bottomNavBar,
-                                      size: bottomIconSize,
-                                      color: Colors.white,
-                                    ),
-                                    onPressed: openBlurEditor,
-                                  ),
+                                // if (filterEditorConfigs.enabled)
+                                //   FlatIconTextButton(
+                                //     key: const ValueKey(
+                                //         'open-filter-editor-btn'),
+                                //     label: Text(
+                                //         i18n.filterEditor
+                                //             .bottomNavigationBarText,
+                                //         style: bottomTextStyle),
+                                //     icon: Icon(
+                                //       icons.filterEditor.bottomNavBar,
+                                //       size: bottomIconSize,
+                                //       color: Colors.white,
+                                //     ),
+                                //     onPressed: openFilterEditor,
+                                //   ),
+                                // if (blurEditorConfigs.enabled)
+                                //   FlatIconTextButton(
+                                //     key: const ValueKey('open-blur-editor-btn'),
+                                //     label: Text(
+                                //         i18n.blurEditor.bottomNavigationBarText,
+                                //         style: bottomTextStyle),
+                                //     icon: Icon(
+                                //       icons.blurEditor.bottomNavBar,
+                                //       size: bottomIconSize,
+                                //       color: Colors.white,
+                                //     ),
+                                //     onPressed: openBlurEditor,
+                                //   ),
+
                                 if (emojiEditorConfigs.enabled)
                                   FlatIconTextButton(
                                     key:

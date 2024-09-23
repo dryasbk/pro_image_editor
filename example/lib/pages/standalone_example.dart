@@ -81,38 +81,38 @@ class _StandaloneExampleState extends State<StandaloneExample>
                     );
                   },
                 ),
-                ListTile(
-                  leading: const Icon(Icons.filter),
-                  title: const Text('Filter-Editor'),
-                  trailing: const Icon(Icons.chevron_right),
-                  onTap: () async {
-                    Navigator.pop(context);
-                    await precacheImage(
-                        AssetImage(ExampleConstants.of(context)!.demoAssetPath),
-                        context);
-                    if (!context.mounted) return;
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (context) => _buildFilterEditor()),
-                    );
-                  },
-                ),
-                ListTile(
-                  leading: const Icon(Icons.blur_on),
-                  title: const Text('Blur-Editor'),
-                  trailing: const Icon(Icons.chevron_right),
-                  onTap: () async {
-                    Navigator.pop(context);
-                    await precacheImage(
-                        AssetImage(ExampleConstants.of(context)!.demoAssetPath),
-                        context);
-                    if (!context.mounted) return;
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (context) => _buildBlurEditor()),
-                    );
-                  },
-                ),
+                // ListTile(
+                //   leading: const Icon(Icons.filter),
+                //   title: const Text('Filter-Editor'),
+                //   trailing: const Icon(Icons.chevron_right),
+                //   onTap: () async {
+                //     Navigator.pop(context);
+                //     await precacheImage(
+                //         AssetImage(ExampleConstants.of(context)!.demoAssetPath),
+                //         context);
+                //     if (!context.mounted) return;
+                //     Navigator.of(context).push(
+                //       MaterialPageRoute(
+                //           builder: (context) => _buildFilterEditor()),
+                //     );
+                //   },
+                // ),
+                // ListTile(
+                //   leading: const Icon(Icons.blur_on),
+                //   title: const Text('Blur-Editor'),
+                //   trailing: const Icon(Icons.chevron_right),
+                //   onTap: () async {
+                //     Navigator.pop(context);
+                //     await precacheImage(
+                //         AssetImage(ExampleConstants.of(context)!.demoAssetPath),
+                //         context);
+                //     if (!context.mounted) return;
+                //     Navigator.of(context).push(
+                //       MaterialPageRoute(
+                //           builder: (context) => _buildBlurEditor()),
+                //     );
+                //   },
+                // ),
               ],
             );
           },
@@ -170,35 +170,35 @@ class _StandaloneExampleState extends State<StandaloneExample>
     );
   }
 
-  Widget _buildFilterEditor() {
-    return FilterEditor.asset(
-      ExampleConstants.of(context)!.demoAssetPath,
-      initConfigs: FilterEditorInitConfigs(
-        theme: ThemeData.dark(),
-        convertToUint8List: true,
-        onImageEditingStarted: onImageEditingStarted,
-        onImageEditingComplete: onImageEditingComplete,
-        onCloseEditor: onCloseEditor,
-        configs: ProImageEditorConfigs(
-          designMode: platformDesignMode,
-        ),
-      ),
-    );
-  }
+  // Widget _buildFilterEditor() {
+  //   return FilterEditor.asset(
+  //     ExampleConstants.of(context)!.demoAssetPath,
+  //     initConfigs: FilterEditorInitConfigs(
+  //       theme: ThemeData.dark(),
+  //       convertToUint8List: true,
+  //       onImageEditingStarted: onImageEditingStarted,
+  //       onImageEditingComplete: onImageEditingComplete,
+  //       onCloseEditor: onCloseEditor,
+  //       configs: ProImageEditorConfigs(
+  //         designMode: platformDesignMode,
+  //       ),
+  //     ),
+  //   );
+  // }
 
-  Widget _buildBlurEditor() {
-    return BlurEditor.asset(
-      ExampleConstants.of(context)!.demoAssetPath,
-      initConfigs: BlurEditorInitConfigs(
-        theme: ThemeData.dark(),
-        convertToUint8List: true,
-        onImageEditingStarted: onImageEditingStarted,
-        onImageEditingComplete: onImageEditingComplete,
-        onCloseEditor: onCloseEditor,
-        configs: ProImageEditorConfigs(
-          designMode: platformDesignMode,
-        ),
-      ),
-    );
-  }
+  // Widget _buildBlurEditor() {
+  //   return BlurEditor.asset(
+  //     ExampleConstants.of(context)!.demoAssetPath,
+  //     initConfigs: BlurEditorInitConfigs(
+  //       theme: ThemeData.dark(),
+  //       convertToUint8List: true,
+  //       onImageEditingStarted: onImageEditingStarted,
+  //       onImageEditingComplete: onImageEditingComplete,
+  //       onCloseEditor: onCloseEditor,
+  //       configs: ProImageEditorConfigs(
+  //         designMode: platformDesignMode,
+  //       ),
+  //     ),
+  //   );
+  // }
 }

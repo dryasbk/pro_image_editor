@@ -194,50 +194,51 @@ class _WhatsAppExampleState extends State<WhatsAppExample>
             cropRotateEditorConfigs: const CropRotateEditorConfigs(
               enableDoubleTap: false,
             ),
-            filterEditorConfigs: FilterEditorConfigs(
-              filterList: [
-                const FilterModel(
-                  name: "None",
-                  filters: [],
-                ),
-                FilterModel(
-                  name: "Pop",
-                  filters: [
-                    ColorFilterAddons.colorOverlay(255, 225, 80, 0.08),
-                    ColorFilterAddons.saturation(0.1),
-                    ColorFilterAddons.contrast(0.05),
-                  ],
-                ),
-                FilterModel(
-                  name: "B&W",
-                  filters: [
-                    ColorFilterAddons.grayscale(),
-                    ColorFilterAddons.colorOverlay(100, 28, 210, 0.03),
-                    ColorFilterAddons.brightness(0.1),
-                  ],
-                ),
-                FilterModel(
-                  name: "Cool",
-                  filters: [
-                    ColorFilterAddons.addictiveColor(0, 0, 20),
-                  ],
-                ),
-                FilterModel(
-                  name: "Chrome",
-                  filters: [
-                    ColorFilterAddons.contrast(0.15),
-                    ColorFilterAddons.saturation(0.2),
-                  ],
-                ),
-                FilterModel(
-                  name: "Film",
-                  filters: [
-                    ColorFilterAddons.brightness(.05),
-                    ColorFilterAddons.saturation(-0.03),
-                  ],
-                ),
-              ],
-            ),
+            // filterEditorConfigs: FilterEditorConfigs(
+            //   filterList: [
+            //     const FilterModel(
+            //       name: "None",
+            //       filters: [],
+            //     ),
+            //     FilterModel(
+            //       name: "Pop",
+            //       filters: [
+            //         ColorFilterAddons.colorOverlay(255, 225, 80, 0.08),
+            //         ColorFilterAddons.saturation(0.1),
+            //         ColorFilterAddons.contrast(0.05),
+            //       ],
+            //     ),
+            //     FilterModel(
+            //       name: "B&W",
+            //       filters: [
+            //         ColorFilterAddons.grayscale(),
+            //         ColorFilterAddons.colorOverlay(100, 28, 210, 0.03),
+            //         ColorFilterAddons.brightness(0.1),
+            //       ],
+            //     ),
+            //     FilterModel(
+            //       name: "Cool",
+            //       filters: [
+            //         ColorFilterAddons.addictiveColor(0, 0, 20),
+            //       ],
+            //     ),
+            //     FilterModel(
+            //       name: "Chrome",
+            //       filters: [
+            //         ColorFilterAddons.contrast(0.15),
+            //         ColorFilterAddons.saturation(0.2),
+            //       ],
+            //     ),
+            //     FilterModel(
+            //       name: "Film",
+            //       filters: [
+            //         ColorFilterAddons.brightness(.05),
+            //         ColorFilterAddons.saturation(-0.03),
+            //       ],
+            //     ),
+            //   ],
+            // ),
+            // //
             emojiEditorConfigs: const EmojiEditorConfigs(
               checkPlatformCompatibility: !kIsWeb,
             ),
@@ -301,28 +302,29 @@ class _WhatsAppExampleState extends State<WhatsAppExample>
                   ),
                 ),
               ),
-              filterEditor: CustomWidgetsFilterEditor(
-                filterButton: (
-                  filter,
-                  isSelected,
-                  scaleFactor,
-                  onSelectFilter,
-                  editorImage,
-                  filterKey,
-                ) {
-                  return WhatsAppFilterBtn(
-                    filter: filter,
-                    isSelected: isSelected,
-                    onSelectFilter: () {
-                      onSelectFilter.call();
-                      _editor!.setState(() {});
-                    },
-                    editorImage: editorImage,
-                    filterKey: filterKey,
-                    scaleFactor: scaleFactor,
-                  );
-                },
-              ),
+              //   filterEditor: CustomWidgetsFilterEditor(
+              //     filterButton: (
+              //       filter,
+              //       isSelected,
+              //       scaleFactor,
+              //       onSelectFilter,
+              //       editorImage,
+              //       filterKey,
+              //     ) {
+              //       return WhatsAppFilterBtn(
+              //         filter: filter,
+              //         isSelected: isSelected,
+              //         onSelectFilter: () {
+              //           onSelectFilter.call();
+              //           _editor!.setState(() {});
+              //         },
+              //         editorImage: editorImage,
+              //         filterKey: filterKey,
+              //         scaleFactor: scaleFactor,
+              //       );
+              //     },
+              //   ),
+              // //
             ),
           ),
         );
@@ -438,7 +440,7 @@ class _WhatsAppExampleState extends State<WhatsAppExample>
           opacity: opacity,
         ),
       _buildDemoSendArea(editor, opacity),
-      WhatsappFilters(editor: editor, whatsAppHelper: _whatsAppHelper)
+      // WhatsappFilters(editor: editor, whatsAppHelper: _whatsAppHelper)
     ];
   }
 

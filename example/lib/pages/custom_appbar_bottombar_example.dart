@@ -184,18 +184,18 @@ class _CustomAppbarBottombarExampleState
                     _bottomBarCropEditor(cropRotateEditor, constraints),
               ),
             ),
-            filterEditor: CustomWidgetsFilterEditor(
-              appBar: (filterEditor, rebuildStream) => ReactiveCustomAppbar(
-                stream: rebuildStream,
-                builder: (_) => _appBarFilterEditor(filterEditor),
-              ),
-            ),
-            blurEditor: CustomWidgetsBlurEditor(
-              appBar: (blurEditor, rebuildStream) => ReactiveCustomAppbar(
-                stream: rebuildStream,
-                builder: (_) => _appBarBlurEditor(blurEditor),
-              ),
-            ),
+            // filterEditor: CustomWidgetsFilterEditor(
+            //   appBar: (filterEditor, rebuildStream) => ReactiveCustomAppbar(
+            //     stream: rebuildStream,
+            //     builder: (_) => _appBarFilterEditor(filterEditor),
+            //   ),
+            // ),
+            // blurEditor: CustomWidgetsBlurEditor(
+            //   appBar: (blurEditor, rebuildStream) => ReactiveCustomAppbar(
+            //     stream: rebuildStream,
+            //     builder: (_) => _appBarBlurEditor(blurEditor),
+            //   ),
+            // ),
             layerInteraction: CustomWidgetsLayerInteraction(
               editIcon:
                   (rebuildStream, onTap, toggleTooltipVisibility, rotation) =>
@@ -550,70 +550,70 @@ class _CustomAppbarBottombarExampleState
     );
   }
 
-  AppBar _appBarFilterEditor(FilterEditorState filterEditor) {
-    return AppBar(
-      automaticallyImplyLeading: false,
-      backgroundColor: Colors.black,
-      foregroundColor: Colors.white,
-      actions: [
-        IconButton(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          icon: const Icon(Icons.arrow_back),
-          onPressed: filterEditor.close,
-        ),
-        const Spacer(),
-        IconButton(
-          tooltip: 'My Button',
-          color: Colors.amber,
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          icon: const Icon(
-            Icons.bug_report,
-            color: Colors.amber,
-          ),
-          onPressed: () {},
-        ),
-        IconButton(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          icon: const Icon(Icons.done),
-          iconSize: 28,
-          onPressed: filterEditor.done,
-        ),
-      ],
-    );
-  }
+//   AppBar _appBarFilterEditor(FilterEditorState filterEditor) {
+//     return AppBar(
+//       automaticallyImplyLeading: false,
+//       backgroundColor: Colors.black,
+//       foregroundColor: Colors.white,
+//       actions: [
+//         IconButton(
+//           padding: const EdgeInsets.symmetric(horizontal: 8),
+//           icon: const Icon(Icons.arrow_back),
+//           onPressed: filterEditor.close,
+//         ),
+//         const Spacer(),
+//         IconButton(
+//           tooltip: 'My Button',
+//           color: Colors.amber,
+//           padding: const EdgeInsets.symmetric(horizontal: 8),
+//           icon: const Icon(
+//             Icons.bug_report,
+//             color: Colors.amber,
+//           ),
+//           onPressed: () {},
+//         ),
+//         IconButton(
+//           padding: const EdgeInsets.symmetric(horizontal: 8),
+//           icon: const Icon(Icons.done),
+//           iconSize: 28,
+//           onPressed: filterEditor.done,
+//         ),
+//       ],
+//     );
+//   }
 
-  AppBar _appBarBlurEditor(BlurEditorState blurEditor) {
-    return AppBar(
-      automaticallyImplyLeading: false,
-      backgroundColor: Colors.black,
-      foregroundColor: Colors.white,
-      actions: [
-        IconButton(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          icon: const Icon(Icons.arrow_back),
-          onPressed: blurEditor.close,
-        ),
-        const Spacer(),
-        IconButton(
-          tooltip: 'My Button',
-          color: Colors.amber,
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          icon: const Icon(
-            Icons.bug_report,
-            color: Colors.amber,
-          ),
-          onPressed: () {},
-        ),
-        IconButton(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          icon: const Icon(Icons.done),
-          iconSize: 28,
-          onPressed: blurEditor.done,
-        ),
-      ],
-    );
-  }
-
+//   AppBar _appBarBlurEditor(BlurEditorState blurEditor) {
+//     return AppBar(
+//       automaticallyImplyLeading: false,
+//       backgroundColor: Colors.black,
+//       foregroundColor: Colors.white,
+//       actions: [
+//         IconButton(
+//           padding: const EdgeInsets.symmetric(horizontal: 8),
+//           icon: const Icon(Icons.arrow_back),
+//           onPressed: blurEditor.close,
+//         ),
+//         const Spacer(),
+//         IconButton(
+//           tooltip: 'My Button',
+//           color: Colors.amber,
+//           padding: const EdgeInsets.symmetric(horizontal: 8),
+//           icon: const Icon(
+//             Icons.bug_report,
+//             color: Colors.amber,
+//           ),
+//           onPressed: () {},
+//         ),
+//         IconButton(
+//           padding: const EdgeInsets.symmetric(horizontal: 8),
+//           icon: const Icon(Icons.done),
+//           iconSize: 28,
+//           onPressed: blurEditor.done,
+//         ),
+//       ],
+//     );
+//   }
+// //
   Widget _bottomNavigationBar(
       ProImageEditorState editor, Key key, BoxConstraints constraints) {
     return Scrollbar(
@@ -679,15 +679,15 @@ class _CustomAppbarBottombarExampleState
                       ),
                       onPressed: editor.openCropRotateEditor,
                     ),
-                    FlatIconTextButton(
-                      label: Text('Filter', style: _bottomTextStyle),
-                      icon: const Icon(
-                        Icons.filter,
-                        size: 22.0,
-                        color: Colors.white,
-                      ),
-                      onPressed: editor.openFilterEditor,
-                    ),
+                    // FlatIconTextButton(
+                    //   label: Text('Filter', style: _bottomTextStyle),
+                    //   icon: const Icon(
+                    //     Icons.filter,
+                    //     size: 22.0,
+                    //     color: Colors.white,
+                    //   ),
+                    //   onPressed: editor.openFilterEditor,
+                    // ),
                     FlatIconTextButton(
                       label: Text('Emoji', style: _bottomTextStyle),
                       icon: const Icon(

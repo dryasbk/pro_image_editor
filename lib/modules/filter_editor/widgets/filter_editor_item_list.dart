@@ -152,23 +152,23 @@ class _FilterEditorItemListState extends State<FilterEditorItemList> {
         widget.selectedFilter.hashCode == filter.filters.hashCode ||
             (widget.selectedFilter.isEmpty && filter.filters.isEmpty);
 
-    if (widget.configs.customWidgets.filterEditor.filterButton != null) {
-      return widget.configs.customWidgets.filterEditor.filterButton!.call(
-        FilterModel(
-          name: widget.configs.i18n.filterEditor.filters
-              .getFilterI18n(filter.name),
-          filters: filter.filters,
-        ),
-        isSelected,
-        widget.itemScaleFactor,
-        () => setState(() => widget.onSelectFilter(filter)),
-        _buildPreviewImage(
-          const Size(64, 64),
-          filter,
-        ),
-        ValueKey('Filter-${filter.name}-$index'),
-      );
-    }
+    // if (widget.configs.customWidgets.filterEditor.filterButton != null) {
+    //   return widget.configs.customWidgets.filterEditor.filterButton!.call(
+    //     FilterModel(
+    //       name: widget.configs.i18n.filterEditor.filters
+    //           .getFilterI18n(filter.name),
+    //       filters: filter.filters,
+    //     ),
+    //     isSelected,
+    //     widget.itemScaleFactor,
+    //     () => setState(() => widget.onSelectFilter(filter)),
+    //     _buildPreviewImage(
+    //       const Size(64, 64),
+    //       filter,
+    //     ),
+    //     ValueKey('Filter-${filter.name}-$index'),
+    //   );
+    // }
 
     return GestureDetector(
       key: ValueKey('Filter-${filter.name}-$index'),

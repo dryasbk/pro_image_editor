@@ -331,14 +331,14 @@ class _HighlyConfigurableExampleState extends State<HighlyConfigurableExample>
             AspectRatioItem(text: '3*5.5', value: 3.0 / 5.5),
           ],
         ),
-        filterEditorConfigs: FilterEditorConfigs(
-          enabled: true,
-          filterList: presetFiltersList,
-        ),
-        blurEditorConfigs: const BlurEditorConfigs(
-          enabled: true,
-          maxBlur: 20.0,
-        ),
+        // filterEditorConfigs: FilterEditorConfigs(
+        //   enabled: true,
+        //   filterList: presetFiltersList,
+        // ),
+        // blurEditorConfigs: const BlurEditorConfigs(
+        //   enabled: true,
+        //   maxBlur: 20.0,
+        // ),
         emojiEditorConfigs: const EmojiEditorConfigs(
           enabled: true,
           initScale: 2.0,

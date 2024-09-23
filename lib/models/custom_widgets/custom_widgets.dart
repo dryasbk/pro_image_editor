@@ -25,8 +25,8 @@ class ImageEditorCustomWidgets {
     this.paintEditor = const CustomWidgetsPaintEditor(),
     this.textEditor = const CustomWidgetsTextEditor(),
     this.cropRotateEditor = const CustomWidgetsCropRotateEditor(),
-    this.filterEditor = const CustomWidgetsFilterEditor(),
-    this.blurEditor = const CustomWidgetsBlurEditor(),
+    // this.filterEditor = const CustomWidgetsFilterEditor(),
+    // this.blurEditor = const CustomWidgetsBlurEditor(),
     this.layerInteraction = const CustomWidgetsLayerInteraction(),
   });
 
@@ -42,11 +42,11 @@ class ImageEditorCustomWidgets {
   /// The crop and rotate editor instance.
   final CustomWidgetsCropRotateEditor cropRotateEditor;
 
-  /// The filter editor instance.
-  final CustomWidgetsFilterEditor filterEditor;
+  // /// The filter editor instance.
+  // final CustomWidgetsFilterEditor filterEditor;
 
-  /// The blur editor instance.
-  final CustomWidgetsBlurEditor blurEditor;
+  // /// The blur editor instance.
+  // final CustomWidgetsBlurEditor blurEditor;
 
   /// Defines the set of interactions (edit, remove, rotate/scale) for
   /// custom widgets.
@@ -130,8 +130,8 @@ class ImageEditorCustomWidgets {
     CustomWidgetsPaintEditor? paintEditor,
     CustomWidgetsTextEditor? textEditor,
     CustomWidgetsCropRotateEditor? cropRotateEditor,
-    CustomWidgetsFilterEditor? filterEditor,
-    CustomWidgetsBlurEditor? blurEditor,
+    // CustomWidgetsFilterEditor? filterEditor,
+    // CustomWidgetsBlurEditor? blurEditor,
     Widget Function(String message, ProImageEditorConfigs configs)?
         loadingDialog,
     Widget? circularProgressIndicator,
@@ -142,8 +142,8 @@ class ImageEditorCustomWidgets {
       paintEditor: paintEditor ?? this.paintEditor,
       textEditor: textEditor ?? this.textEditor,
       cropRotateEditor: cropRotateEditor ?? this.cropRotateEditor,
-      filterEditor: filterEditor ?? this.filterEditor,
-      blurEditor: blurEditor ?? this.blurEditor,
+      // filterEditor: filterEditor ?? this.filterEditor,
+      // blurEditor: blurEditor ?? this.blurEditor,
       loadingDialog: loadingDialog ?? this.loadingDialog,
       circularProgressIndicator:
           circularProgressIndicator ?? this.circularProgressIndicator,

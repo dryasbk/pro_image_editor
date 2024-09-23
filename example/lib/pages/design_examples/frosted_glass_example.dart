@@ -188,49 +188,50 @@ class _FrostedGlassExampleState extends State<FrostedGlassExample>
                 ),
               ),
             ),
-            filterEditor: CustomWidgetsFilterEditor(
-              slider:
-                  (editorState, rebuildStream, value, onChanged, onChangeEnd) =>
-                      ReactiveCustomWidget(
-                stream: rebuildStream,
-                builder: (_) => Slider(
-                  onChanged: onChanged,
-                  onChangeEnd: onChangeEnd,
-                  value: value,
-                  activeColor: Colors.blue.shade200,
-                ),
-              ),
-              appBar: (filterEditor, rebuildStream) => null,
-              bodyItems: (filterEditor, rebuildStream) => [
-                ReactiveCustomWidget(
-                  stream: rebuildStream,
-                  builder: (_) =>
-                      FrostedGlassFilterAppbar(filterEditor: filterEditor),
-                ),
-              ],
-            ),
-            blurEditor: CustomWidgetsBlurEditor(
-              slider:
-                  (editorState, rebuildStream, value, onChanged, onChangeEnd) =>
-                      ReactiveCustomWidget(
-                stream: rebuildStream,
-                builder: (_) => Slider(
-                  onChanged: onChanged,
-                  onChangeEnd: onChangeEnd,
-                  value: value,
-                  max: editorState.configs.blurEditorConfigs.maxBlur,
-                  activeColor: Colors.blue.shade200,
-                ),
-              ),
-              appBar: (blurEditor, rebuildStream) => null,
-              bodyItems: (blurEditor, rebuildStream) => [
-                ReactiveCustomWidget(
-                  stream: rebuildStream,
-                  builder: (_) =>
-                      FrostedGlassBlurAppbar(blurEditor: blurEditor),
-                ),
-              ],
-            ),
+            //     filterEditor: CustomWidgetsFilterEditor(
+            //       slider:
+            //           (editorState, rebuildStream, value, onChanged, onChangeEnd) =>
+            //               ReactiveCustomWidget(
+            //         stream: rebuildStream,
+            //         builder: (_) => Slider(
+            //           onChanged: onChanged,
+            //           onChangeEnd: onChangeEnd,
+            //           value: value,
+            //           activeColor: Colors.blue.shade200,
+            //         ),
+            //       ),
+            //       appBar: (filterEditor, rebuildStream) => null,
+            //       bodyItems: (filterEditor, rebuildStream) => [
+            //         ReactiveCustomWidget(
+            //           stream: rebuildStream,
+            //           builder: (_) =>
+            //               FrostedGlassFilterAppbar(filterEditor: filterEditor),
+            //         ),
+            //       ],
+            //     ),
+            //     blurEditor: CustomWidgetsBlurEditor(
+            //       slider:
+            //           (editorState, rebuildStream, value, onChanged, onChangeEnd) =>
+            //               ReactiveCustomWidget(
+            //         stream: rebuildStream,
+            //         builder: (_) => Slider(
+            //           onChanged: onChanged,
+            //           onChangeEnd: onChangeEnd,
+            //           value: value,
+            //           max: editorState.configs.blurEditorConfigs.maxBlur,
+            //           activeColor: Colors.blue.shade200,
+            //         ),
+            //       ),
+            //       appBar: (blurEditor, rebuildStream) => null,
+            //       bodyItems: (blurEditor, rebuildStream) => [
+            //         ReactiveCustomWidget(
+            //           stream: rebuildStream,
+            //           builder: (_) =>
+            //               FrostedGlassBlurAppbar(blurEditor: blurEditor),
+            //         ),
+            //       ],
+            //     ),
+            //  //
           ),
         ),
       );
