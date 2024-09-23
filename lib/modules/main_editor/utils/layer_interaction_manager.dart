@@ -1,13 +1,13 @@
 // Dart imports:
-import 'dart:io';
+// import 'dart:io';
 import 'dart:math';
 
 // Flutter imports:
-import 'package:flutter/foundation.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:vibration/vibration.dart';
+// import 'package:vibration/vibration.dart';
 
 // Project imports:
 import '/models/editor_configs/pro_image_editor_configs.dart';
@@ -228,7 +228,7 @@ class LayerInteractionManager {
 
     if (editorScaleFactor > 1) return;
 
-    bool shouldVibrate = false;
+    // bool shouldVibrate = false;
     double posX = activeLayer.offset.dx;
     double posY = activeLayer.offset.dy;
 
@@ -251,7 +251,7 @@ class LayerInteractionManager {
             (helperGoNearLineLeft || helperGoNearLineRight)) ||
         (showVerticalHelperLine && hitAreaX)) {
       if (!showVerticalHelperLine) {
-        shouldVibrate = true;
+        // shouldVibrate = true;
         snapStartPosX = detail.focalPoint.dx;
       }
       showVerticalHelperLine = true;
@@ -268,7 +268,7 @@ class LayerInteractionManager {
             (helperGoNearLineTop || helperGoNearLineBottom)) ||
         (showHorizontalHelperLine && hitAreaY)) {
       if (!showHorizontalHelperLine) {
-        shouldVibrate = true;
+        // shouldVibrate = true;
         snapStartPosY = detail.focalPoint.dy;
       }
       showHorizontalHelperLine = true;
@@ -280,9 +280,9 @@ class LayerInteractionManager {
           posY <= 0 ? LayerLastPosition.top : LayerLastPosition.bottom;
     }
 
-    if (configEnabledHitVibration && shouldVibrate) {
-      _lineHitVibrate();
-    }
+    // if (configEnabledHitVibration && shouldVibrate) {
+    //   _lineHitVibrate();
+    // }
   }
 
   /// Calculates scaling and rotation of a layer based on user interactions.
@@ -345,9 +345,9 @@ class LayerInteractionManager {
 
         rotationHelperLineX = posX + editorSize.width / 2;
         rotationHelperLineY = posY + editorSize.height / 2;
-        if (configEnabledHitVibration && !showRotationHelperLine) {
-          _lineHitVibrate();
-        }
+        // if (configEnabledHitVibration && !showRotationHelperLine) {
+        //   _lineHitVibrate();
+        // }
         showRotationHelperLine = true;
       }
       snapLastRotation = deg;
@@ -505,19 +505,19 @@ class LayerInteractionManager {
   ///
   /// This function is used to provide haptic feedback when helper lines are
   /// interacted with, enhancing the user experience.
-  void _lineHitVibrate() {
-    if (deviceCanVibrate && deviceCanCustomVibrate) {
-      Vibration.vibrate(duration: 3);
-    } else if (!kIsWeb && Platform.isAndroid) {
-      /// On old android devices we can stop the vibration after 3 milliseconds
-      /// iOS: only works for custom haptic vibrations using CHHapticEngine.
-      /// This will set `deviceCanCustomVibrate` anyway to true so it's
-      /// impossible to fake it.
-      Vibration.vibrate();
-      Future.delayed(const Duration(milliseconds: 3))
-          .whenComplete(Vibration.cancel);
-    }
-  }
+  // void _lineHitVibrate() {
+  //   // if (deviceCanVibrate && deviceCanCustomVibrate) {
+  //   //   Vibration.vibrate(duration: 3);
+  //   // } else if (!kIsWeb && Platform.isAndroid) {
+  //   //   /// On old android devices we can stop the vibration after 3 milliseconds
+  //   //   /// iOS: only works for custom haptic vibrations using CHHapticEngine.
+  //   //   /// This will set `deviceCanCustomVibrate` anyway to true so it's
+  //   //   /// impossible to fake it.
+  //   //   Vibration.vibrate();
+  //   //   Future.delayed(const Duration(milliseconds: 3))
+  //   //       .whenComplete(Vibration.cancel);
+  //   // }
+  // }
 
   void _setMinMaxScaleFactor(ProImageEditorConfigs configs, Layer layer) {
     if (layer is PaintingLayerData) {

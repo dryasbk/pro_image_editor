@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // Package imports:
-import 'package:vibration/vibration.dart';
+// import 'package:vibration/vibration.dart';
 
 // Project imports:
 import '../../mixins/converted_configs.dart';
@@ -405,19 +405,19 @@ class ProImageEditorState extends State<ProImageEditor>
       ));
     }
 
-    if (helperLines.hitVibration) {
-      Vibration.hasVibrator().then((hasVibrator) {
-        layerInteractionManager.deviceCanVibrate = hasVibrator ?? false;
+    // if (helperLines.hitVibration) {
+    //   Vibration.hasVibrator().then((hasVibrator) {
+    //     layerInteractionManager.deviceCanVibrate = hasVibrator ?? false;
 
-        if (layerInteractionManager.deviceCanVibrate) {
-          Vibration.hasCustomVibrationsSupport()
-              .then((hasCustomVibrationsSupport) {
-            layerInteractionManager.deviceCanCustomVibrate =
-                hasCustomVibrationsSupport ?? false;
-          });
-        }
-      });
-    }
+    //     if (layerInteractionManager.deviceCanVibrate) {
+    //       Vibration.hasCustomVibrationsSupport()
+    //           .then((hasCustomVibrationsSupport) {
+    //         layerInteractionManager.deviceCanCustomVibrate =
+    //             hasCustomVibrationsSupport ?? false;
+    //       });
+    //     }
+    //   });
+    // }
 
     ServicesBinding.instance.keyboard.addHandler(_onKeyEvent);
     if (kIsWeb) {
